@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File to Base64 Converter</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="matrix-modal" id="matrixModal">
+        <canvas id="matrixCanvas"></canvas>
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <div class="dev-info">
+                <div class="matrix-image">
+                    <img src="matrix-image.png" alt="Matrix Code" class="matrix-art">
+                </div>
+                <div class="info-container">
+                    <div class="info-item">
+                        <i class="fas fa-user"></i>
+                        <span>Salaheddine Moutaouassit</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>justme.bl4ckviper@gmail.com</span>
+                    </div>
+                    <div class="info-item">
+                        <i class="fab fa-instagram"></i>
+                        <span>@bl4ck.viper</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="converter-box">
+            <h1><i class="fas fa-file-code" id="infoIcon"></i> File to Base64 Converter</h1>
+            <div class="upload-area" id="dropZone">
+                <i class="fas fa-file-upload"></i>
+                <p>Drag & Drop your file here</p>
+                <p>Supported: EXE, SCR, APK, BAT, JPG, PNG, DOC, XLS</p>
+                <label for="fileInput" class="upload-btn">Choose File</label>
+                <input type="file" id="fileInput" accept=".exe,.scr,.apk,.bat,.jpg,.jpeg,.png,.doc,.docx,.xls,.xlsx" hidden>
+            </div>
+            <div class="file-info" id="fileInfo">
+                <p>Selected file: <span id="fileName">None</span></p>
+                <p>Size: <span id="fileSize">0 KB</span></p>
+            </div>
+            <button id="convertBtn" class="convert-btn" disabled>
+                <i class="fas fa-sync-alt"></i> Convert to Base64
+            </button>
+            <div class="progress-container" id="progressContainer">
+                <div class="progress-bar">
+                    <div class="progress-glow"></div>
+                </div>
+            </div>
+            <div class="result-area">
+                <textarea id="base64Output" readonly placeholder="Base64 output will appear here..."></textarea>
+                <div id="imagePreview" class="image-preview" style="display: none;">
+                    <h3>Image Preview</h3>
+                    <img id="previewImage" src="" alt="Preview">
+                    <div class="preview-info">
+                        <span id="imageDimensions"></span>
+                        <button id="togglePreviewBtn" class="preview-btn">
+                            <i class="fas fa-eye"></i> Toggle Preview
+                        </button>
+                    </div>
+                </div>
+                <button id="copyBtn" class="copy-btn" disabled>
+                    <i class="fas fa-copy"></i> Copy to Clipboard
+                </button>
+                <button id="downloadBtn" class="download-btn" disabled>
+                    <i class="fas fa-download"></i> Download as Text
+                </button>
+                <button id="smuggleBtn" class="smuggle-btn" disabled>
+                    <i class="fas fa-file-code"></i> Generate HTML Smuggling File
+                </button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
